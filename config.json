@@ -1,0 +1,6 @@
+{
+  "paths": {
+    "root": "/",
+    "posts": "/posts"
+  }
+}
