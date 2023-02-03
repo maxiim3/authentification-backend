@@ -40,10 +40,10 @@ const htmlTemplate = (title, content) => {
     `;
 }
 
-const posts = [
+const courses = [
     {id: 1, title: htmlTemplate("First Post", "This is the first post")},
     {id: 2, title: htmlTemplate("Second Post", "This is the second post")},
     {id: 3, title: htmlTemplate("Third Post", "This is the third post")},
 ]
 
-module.exports.posts = {posts, htmlTemplate}
+module.exports.posts = {courses, htmlTemplate}
