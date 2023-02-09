@@ -1,5 +1,0 @@
-const express = require("express")
-const helmet = require("helmet")
-const dotenv = require("dotenv")
-const {courses} = require("./mocked")
-const {populateDb} = require("./controller")
