@@ -5,6 +5,7 @@ const dotenv = require("dotenv")
 const cors = require("cors")
 const {connect} = require("mongoose")
 const users = require("./router/users")
+const auth = require("./router/auth")
 const home = require("./router/home")
 const api = require("./router/api")
 
@@ -25,6 +26,7 @@ connect(process.env.MONGO_URL)
 
 app.use(config.paths.root, home)
 app.use(config.paths.api.root, api)
+app.use(config.paths.api.auth, auth)
 app.use(config.paths.api.users, users)
 
 app.listen(process.env.PORT || 3001, () => {
