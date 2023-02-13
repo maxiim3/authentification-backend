@@ -1,9 +1,7 @@
 {
 	"paths": {
 		"root": "/",
-		"front": "http://localhost:5173/",
 		"api": {
-			"root": "/api",
 			"users": "/api/users",
 			"auth": "/api/auth",
 			"courses": "/api/courses"
