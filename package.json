@@ -1,35 +1,32 @@
 {
-  "name": "axios-back-end",
-  "version": "1.0.0",
-  "description": "",
-  "main": "lib/app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:server": "nodemon lib/app.js",
-    "start": "node lib/app.js",
-    "build": "babel lib -d build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@types/node": "^18.11.18",
-    "dotenv": "^16.0.3",
-    "prettier": "^2.8.4"
-  },
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-rate-limit": "^6.7.0",
-    "helmet": "^6.0.1",
-    "joi": "^17.7.0",
-    "jsonwebtoken": "^9.0.0",
-    "lodash": "^4.17.21",
-    "mongodb": "^5.0.0",
-    "mongoose": "^6.9.0",
-    "password-validator": "^5.3.0"
-  }
+	"name": "express-api",
+	"version": "1.0.0",
+	"description": "A simple API with Node.js, Express, MongoDB and Mongoose",
+	"main": "lib/app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev:server": "nodemon lib/app.js",
+		"start": "node lib/app.js",
+		"build": "babel lib -d build"
+	},
+	"author": "Maxime Tamburrini",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^18.11.18",
+		"dotenv": "^16.0.3",
+		"prettier": "^2.8.4"
+	},
+	"dependencies": {
+		"bcrypt": "^5.1.0",
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"express-rate-limit": "^6.7.0",
+		"helmet": "^6.0.1",
+		"joi": "^17.7.0",
+		"jsonwebtoken": "^9.0.0",
+		"lodash": "^4.17.21",
+		"mongodb": "^5.0.0",
+		"mongoose": "^6.9.0",
+		"password-validator": "^5.3.0"
+	}
 }
