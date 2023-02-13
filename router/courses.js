@@ -1,5 +1,6 @@
 const {CourseModel, validateCourse} = require("../models/coursesModel")
 const {authorize} = require("../middleware/authorize")
+const {admin} = require("../middleware/admin")
 const express = require("express")
 const router = express.Router()
 
@@ -45,6 +46,13 @@ router.post("/", authorize, async (req, res) => {
 		price: course.price,
 		tags: course.tags,
 	})
+})
+
+router.delete("/:id", authorize, admin, async (req, res) => {
+	const course = await CourseModel.findByIdAndRemove(req.params.id)
+	if (!course) return res.status(404).send("The course with the given ID was not found.")
+
+	return res.send(course)
 })
 
 module.exports = router
