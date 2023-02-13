@@ -5,7 +5,8 @@
 		"api": {
 			"root": "/api",
 			"users": "/api/users",
-			"auth": "/api/auth"
+			"auth": "/api/auth",
+			"courses": "/api/courses"
 		}
 	}
 }

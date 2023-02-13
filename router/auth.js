@@ -1,32 +1,23 @@
-const {User} = require("../models/user")
-const express = require("express")
+const {validateAuth} = require("../models/authModel")
+const {UserModel, checkForJWT} = require("../models/userModel")
+
 const bcrypt = require("bcrypt")
-const dotenv = require("dotenv")
-const Joi = require("joi")
-const jwt = require("jsonwebtoken")
+
+const express = require("express")
 const router = express.Router()
 
+const dotenv = require("dotenv")
 dotenv.config()
-if (!process.env.JWT) {
-	console.error("FATAL ERROR: jtwPrivateKey is not defined")
-	process.exit(1) // 0 means success, 1 means failure
-}
 
-const validate = req => {
-	const JoiSchema = Joi.object({
-		email: Joi.string().min(5).max(255).required().email(),
-		password: Joi.string().min(8).max(1024).required(),
-	})
+checkForJWT()
 
-	return JoiSchema.validate(req)
-}
 router.post("/", async (req, res) => {
 	// 1. Evaluate the request body | using Joi Schema
-	const {error} = validate(req.body)
+	const {error} = validateAuth(req.body)
 	if (error) return res.status(400).send(error.details[0].message)
 
 	// 2. Check if the email is already registered
-	let user = await User.findOne({email: req.body.email})
+	let user = await UserModel.findOne({email: req.body.email})
 	if (!user) return res.status(400).send("Invalid Email or Password")
 
 	// 3. Validate the password | Compare the password with the hashed password
@@ -34,14 +25,17 @@ router.post("/", async (req, res) => {
 	if (!validPassword) return res.status(400).send("Invalid Email or Password")
 
 	// 4. Generate a JWT
-	const token = await jwt.sign({_id: user._id}, process.env.JWT) // jwtPrivateKey is a private key
+	const token = await user.generateAuthToken()
+	console.log(token)
 
 	// 5. Return the token to the client
-	res.header("x-auth-token", token) // set the header with the token than can be debugged in https://jwt.io/#debugger-io
+	return res
+		.header("x-auth-token", token) // set the header with the token than can be debugged in https://jwt.io/#debugger-io
 		.send({
 			_id: user._id,
 			name: user.name,
 			email: user.email,
+			token: token,
 		}) // send the user object to the client
 })
 
