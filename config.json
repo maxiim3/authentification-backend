@@ -3,6 +3,7 @@
 		"root": "/",
 		"api": {
 			"users": "/api/users",
+			"api": "/api",
 			"auth": "/api/auth",
 			"courses": "/api/courses"
 		}
