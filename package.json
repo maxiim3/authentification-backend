@@ -1,31 +1,45 @@
 {
-  "name": "axios-back-end",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:server": "nodemon app.js",
-    "start": "node app.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^18.11.18",
-    "dotenv": "^16.0.3",
-    "prettier": "^2.8.4"
-  },
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-rate-limit": "^6.7.0",
-    "helmet": "^6.0.1",
-    "joi": "^17.7.0",
-    "jsonwebtoken": "^9.0.0",
-    "lodash": "^4.17.21",
-    "mongodb": "^5.0.0",
-    "mongoose": "^6.9.0",
-    "password-validator": "^5.3.0"
-  }
+	"name": "authentication-backend",
+	"version": "1.0.0",
+	"description": "A serverless backend for authentication",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev:server": "nodemon app.js",
+		"start": "node app.js",
+		"deploy": "netlify deploy --prod",
+		"dev:serverless": "netlify dev"
+	},
+	"author": "maxiim3 | Maxime Tamburrini",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^18.11.18",
+		"dotenv": "^16.0.3",
+		"netlify": "^13.1.2",
+		"prettier": "^2.8.4"
+	},
+	"keywords": [
+		"netlify",
+		"express.js",
+		"serverless",
+		"authentication",
+		"mongodb"
+	],
+	"bugs": {
+		"url": "https://github.com/maxiim3/authentification-backend/issues"
+	},
+	"dependencies": {
+		"bcrypt": "^5.1.0",
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"express-rate-limit": "^6.7.0",
+		"helmet": "^6.0.1",
+		"joi": "^17.7.0",
+		"jsonwebtoken": "^9.0.0",
+		"lodash": "^4.17.21",
+		"mongodb": "^5.0.0",
+		"mongoose": "^6.9.0",
+		"password-validator": "^5.3.0",
+		"serverless-http": "^3.1.1"
+	}
 }
