@@ -6,8 +6,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev:server": "nodemon lib/app.js",
-		"start": "node lib/app.js",
-		"build": "babel lib -d build"
+		"start": "node lib/app.js"
 	},
 	"author": "Maxime Tamburrini",
 	"license": "ISC",
