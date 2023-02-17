@@ -36,23 +36,25 @@ This structure was refactored for better readability and maintainability, as the
 and Courses. The refactored structure is as follows:
 
 ```
-- lib/
-  - user/
-    - userRoutes.js
-    - userConnection.js
-    - userController.js
-    - userService.js
-    - userMiddleware.js
-    - userModel.js
-    - userSchema.js
-  - course/
-    - courseRoutes.js
-    - courseConnection.js
-    - courseController.js
-    - courseService.js
-    - courseMiddleware.js
-    - courseModel.js
-    - courseSchema.js
+lib/
+- course/
+  - routes.js
+  - controller.js
+  - service.js
+  - middleware.js
+  - database/
+    - connection.js
+    - model.js
+    - schema.js
+- user/
+  - routes.js
+  - controller.js
+  - service.js
+  - middleware.js
+  - database/
+    - connection.js
+    - model.js
+    - schema.js
 ```
 
 The refactored project structure separates the Users and Courses databases into different folders, allowing for easier
