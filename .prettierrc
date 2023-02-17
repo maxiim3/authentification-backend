@@ -1,10 +1,9 @@
 {
-  "trailingComma": "es5",
-  "bracketSameLine": true,
+  "trailingComma": "all",
   "bracketSpacing": false,
   "jsxBracketSameLine": true,
   "arrowParens": "avoid",
-  "tabWidth": 4,
+  "tabWidth": 2,
   "semi": false,
   "singleQuote": false,
   "printWidth": 100,
@@ -17,5 +16,34 @@
   "quoteProps": "as-needed",
   "requirePragma": false,
   "useTabs": true,
-  "vueIndentScriptAndStyle": false
+  "vueIndentScriptAndStyle": false,
+  "overrides": [
+    {
+      "files": [
+        "*.json",
+        "*.yml",
+        "*.yaml",
+        "*.md",
+        "*.html",
+        "*.vue",
+        "*.css",
+        "*.scss",
+        "*.less",
+        "*.styl",
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+        "*.graphql",
+        "*.gql",
+        "*.mdx",
+        "*.vue",
+        "*.svelte"
+      ],
+      "options": {
+        "bracketSameLine": true,
+        "braceStyle": "1tbs"
+      }
+    }
+  ]
 }
